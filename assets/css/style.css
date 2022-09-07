@@ -57,6 +57,7 @@ p {
 .choices:hover{
     background-color: var(--primary);
     cursor: pointer;
+} 
 .choices {
     margin: 5px;
 }
