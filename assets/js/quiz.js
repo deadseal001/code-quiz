@@ -288,7 +288,6 @@ function startQuiz() {
     clearBtn.textContent="Clear high scores";
     mainEl.appendChild(clearBtn);
     clearBtn.addEventListener("click",function(){
-      // var emptyArr=JSON.stringify([]);
       localStorage.removeItem("scores");
       reloadPage();
     });
@@ -301,6 +300,7 @@ function startQuiz() {
   choice4El.addEventListener("click", newQuestion);
 }
 
+// function reload page
 function reloadPage() {
   location.reload(true);
   return false;
