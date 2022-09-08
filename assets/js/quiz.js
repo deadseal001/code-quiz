@@ -278,6 +278,20 @@ function startQuiz() {
       var sc = Math.max(savedscores[i].s, 0);
       addElement(na, sc);
     }
+    var backBtnEl=document.createElement("button");
+    backBtnEl.className="startBtn backBtn";
+    backBtnEl.textContent="Go back";
+    mainEl.appendChild(backBtnEl);
+    backBtnEl.addEventListener("click",reloadPage);
+    var clearBtn=document.createElement("button");
+    clearBtn.className="startBtn clear Btn";
+    clearBtn.textContent="Clear high scores";
+    mainEl.appendChild(clearBtn);
+    clearBtn.addEventListener("click",function(){
+      // var emptyArr=JSON.stringify([]);
+      localStorage.removeItem("scores");
+      reloadPage();
+    });
   };
 
   newQuestion(0);
@@ -286,6 +300,13 @@ function startQuiz() {
   choice3El.addEventListener("click", newQuestion);
   choice4El.addEventListener("click", newQuestion);
 }
+
+function reloadPage() {
+  location.reload(true);
+  return false;
+}
+
+
 
 //get references to the start button
 var startBtEl = document.querySelector(".startBtn");
